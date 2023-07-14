@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
-const themeSchema = new mongoose.Schema({
-    themeName: {
+const categorySchema = new mongoose.Schema({
+    categoryName: {
         type: String,
         required: true
     },
-    subscribers: [{
+    categoryImage : {
+        type: String,
+        required: true
+    },
+    categoryLikes: [{
         type: ObjectId,
         ref: "User"
     }],
@@ -20,4 +24,4 @@ const themeSchema = new mongoose.Schema({
     }],
 }, { timestamps: { createdAt: 'created_at' } });
 
-module.exports = mongoose.model('Theme', themeSchema);
+module.exports = mongoose.model('Category', categorySchema);

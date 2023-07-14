@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
 const postSchema = new mongoose.Schema({
+    image: {
+
+        type: String,
+        required: true
+    },
     text: {
         type: String,
         required: true
@@ -14,9 +19,9 @@ const postSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "User"
     },
-    themeId: {
+    categoryId: {
         type: ObjectId,
-        ref: "Theme"
+        ref: "Category"
     },
 }, { timestamps: { createdAt: 'created_at' } });
 
