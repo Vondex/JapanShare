@@ -23,3 +23,15 @@ This is a simple project created with Angular </p>
 <br>
 
 <h2>Functionality</h2>
+
+<br>
+
+<h2>Starting the app locally</h2>
+Open a terminal and type `cd server-api` <br>
+Then `npm start`<br>
+<br>
+Open another terminal and type `cd client` <br>
+Then `ng s` <br>
+<br>
+<h3>And you are ready to go!</h3>
+
