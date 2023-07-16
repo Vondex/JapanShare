@@ -1,5 +1,6 @@
-@import url('./assets/resources/home.html');
-@import url('./assets/resources/catalog.css');
+@import url('./assets/resources/static/css/home.css');
+@import url('./assets/resources/static/css/site.css');
+@import url('./assets/resources/static/css/catalog.css');
 /* @import url('./home.css'); */
 /* @import url('./register-login.css');
 @import url('./create-edit.css');
