@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
+/* @import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css"); */
+
+.articles {
+    display: flex;
+    flex-direction: row-reverse;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    height: auto;
+    /* background: #ffe0ef; */
+
+}
+
+.art-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    margin-left: -50px;
+    width: auto;
+
+}
+
+.row {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    gap: 80px;
+    padding: 15px 15px;
+    margin-left: 160px;
+    width: auto;
+
+}
+
+.art-card {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.image-div {
+    width: 50%;
+    height: auto;
+    max-width: 850px;
+
+}
+
+.image-div img {
+    width: 100%;
+}
+
+.card-content {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    width: 25%;
+    gap: 20px;
+    height: auto;
+
+}
+
+.card-content h1 {
+
+    text-transform: uppercase;
+}
+
+.card-content a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.card-content p {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.post-meta p {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.post-meta a {
+    font-weight: bold;
+}
+
+.art {
+    color: rgb(207, 40, 96);
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    justify-content: left;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-left: 175px;
+    margin-top: 100px;
+    border-bottom: solid rgba(160, 154, 156, 0.626);
+    width: 70%;
+
+}
+
+.card-content a:hover {
+    color: rgb(207, 40, 96);
+    transition: 0.3s;
+}
+
+/* .art hr {
+    width: 80%;
+    margin-left: 0;
+    color: black;
+} */
+
+.aside {
+    /* border-top: solid rgba(160, 154, 156, 0.626);
+    border-bottom: solid rgba(160, 154, 156, 0.626); */
+    background-color: rgb(236, 188, 204);
+    width: 60%;
+    /* margin-bottom: -150px; */
+    margin-right: 80px;
+    /* height: 1000px; */
+    margin-top: 140px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    justify-items: center; */
+
+
+}
+
+.aside-headings {
+    /* width: 80%; */
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    /* color: white; */
+    margin-top: 60px;
+    text-transform: uppercase;
+    color: rgb(43, 39, 41);
+
+}
+
+
+
+
+.accordion {
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    margin-left: 50px;
+    margin-top: 30px;
+    /* background: #009578; */
+    background: rgb(243, 218, 226);
+    color: rgb(43, 39, 41);
+}
+.accordion ul {
+    list-style:decimal;
+}
+.accordion__label,
+.accordion__content {
+    padding: 14px 20px;
+}
+
+.accordion__label {
+    display: block;
+    /* color: #ffffff; */
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.1s;
+}
+
+.accordion__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:rgb(102, 92, 97);" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+.accordion__content {
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+}
+
+.accordion__input {
+    display: none;
+}
+
+.accordion__input:checked~.accordion__content {
+    display: block;
+}
+
+.accordion__input:checked~.accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+    color: rgb(102, 92, 97);
+}

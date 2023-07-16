@@ -1,0 +1,30 @@
+.article-section {
+    max-width: auto;
+    display: flexbox;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+.articles {
+    display: flexbox;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    gap: 100px;
+}
+
+.articles-heading {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+}
+.article-img img{
+    max-width: 250px;
+}
+.article-card-content {
+    max-width: 250px;
+}

@@ -1,0 +1,298 @@
+@import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.section-1-home {
+    height: 100vh;
+    background-image: url('../img/sunrise.jpg');
+    background-position: 70%;
+    background-attachment: fixed;
+    background-size: cover;
+    /* filter: brightness(70%); */
+}
+
+.box {
+    width: 100%;
+    height: 600px;
+}
+
+.section-2 {
+    background: #ffe0ef;
+    /* background: #f7f5f5; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+}
+.sec-2-head-splash{
+    margin-top: 50px;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Splash', cursive;
+    font-size: 20px;
+}
+.sec-2-head-splash h1 {
+    
+    font-weight: lighter;
+    font-size: 100px;
+}
+
+.sec-2-para {
+    text-align: center;
+    margin-left: 280px;
+    margin-right: 280px;
+    width: 60%;
+}
+.sec-2-para {
+    font-size: 25px;
+    margin-top: 60px;
+    text-align: center;
+    
+
+}
+
+.section-3 {
+    background-image: url('../img/something.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    /* filter: brightness(70%); */
+}
+
+.section-4 {
+    background: #ffe0ef;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    margin-bottom: -40px;
+
+ 
+}
+
+
+
+
+
+
+/* html {
+    font-family: 'Work Sans', sans-serif;
+} */
+#japan-wrapper {
+    margin-left: auto;
+    margin-right:auto;
+    width: 1000px;
+}
+.forecast-headings {
+/* 
+    text-transform: uppercase; */
+    font-size: 20px;
+    position: relative;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+.forecast-headings span {
+
+    color:  rgb(227, 34, 98);;
+}
+.sakura-info {
+  
+    border-radius: 5px;
+    background: #ffffffde;
+    box-shadow: 3px 10px 20px 5px rgba(130, 100, 122, 0.513);;
+    padding: 40px;
+    margin-top: 60px;
+    width: 25%;
+    font-size: 18px;
+}
+
+.note-short-info {
+  
+    border-radius: 5px;
+    background: #ffffffde;
+    box-shadow: 3px 10px 20px 5px rgba(130, 100, 122, 0.513);;
+    padding: 40px;
+    margin-top: 50px;
+    width: 25%;
+    font-size: 18px;
+}
+.hanami-short-info {
+  
+    margin-left: 850px;
+    border-radius: 5px;
+    background: #ffffffde;
+    box-shadow: 3px 10px 20px 5px rgba(130, 100, 122, 0.513);;
+    padding: 40px;
+    width: 25%;
+    font-size: 18px;
+    margin-top: -280px;
+}
+#japan-wrapper {
+    margin-left: 670px;
+    margin-top: -360px;
+}
+#japan {
+    width: 60%;
+    margin-top: -200px;
+    background: #ffe0ef;
+}
+
+.container {
+
+    width: 100px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    color: rgb(154, 18, 79);
+    font-size: 18px;
+    text-align: center;
+}
+
+.container a{
+    text-decoration: none;
+    color: rgb(154, 18, 79);
+    font-weight: 600;
+}
+
+
+
+/* City containers */
+.tokyo-container {   
+    margin-top: -240px;
+    margin-left: 340px;
+}
+
+.sapporo-container {   
+    margin-top: -530px;
+    margin-left: 430px;
+}
+.sendai-container {   
+    margin-top: -335px;
+    margin-left: 375px;
+}
+.nagoya-container {   
+    margin-top: -215px;
+    margin-left: 245px;
+}
+.kyoto-container {   
+    margin-top: -195px;
+    margin-left: 215px;
+}
+.osaka-container {   
+    margin-top: -180px;
+    margin-left: 200px;
+}
+.kumamoto-container {   
+    margin-top: -110px;
+    margin-left: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    position: absolute;
+    display: none;
+    animation: fadeIn 0.3s;
+
+}
+
+
+
+/* Cards */
+.tokyo-card {
+    
+    margin-top: -250px;
+    margin-left: 430px;
+}
+.sendai-card {
+    margin-top: -290px;
+    margin-left: 340px;
+}
+
+.sapporo-card {
+    margin-top: -460px;
+    margin-left: 430px;
+}
+
+.nagoya-card {
+    /* margin-top: -180px;
+    margin-left: 245px; */
+    margin-top: -240px;
+    margin-left: 340px;
+}
+
+.kyoto-card {
+    margin-top: -240px;
+    margin-left: 340px;
+}
+.osaka-card {
+    margin-top: -240px;
+    margin-left: 340px;
+}
+.kumamoto-card {
+    margin-top: -240px;
+    margin-left: 200px;
+}
+
+
+
+
+
+
+
+.card-body {
+    color: black;
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h4 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.tokyo-container:hover ~ .tokyo-card{
+    display: block;
+}
+
+.sendai-container:hover ~ .sendai-card{
+    display: block;
+}
+
+.sapporo-container:hover ~ .sapporo-card{
+    display: block;
+}
+.nagoya-container:hover ~ .nagoya-card{
+    display: block;
+}
+
+.kyoto-container:hover ~ .kyoto-card{
+    display: block;
+}
+
+.osaka-container:hover ~ .osaka-card{
+    display: block;
+}
+
+.kumamoto-container:hover ~ .kumamoto-card{
+    display: block;
+}
+
+#japan-wrapper >a:hover {
+    color: rgb(101, 19, 56);
+    cursor: auto;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
