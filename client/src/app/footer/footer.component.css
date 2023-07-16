@@ -1,0 +1,18 @@
+footer {
+    position: absolute;
+    /* opacity: 0.7; */
+    bottom: 0;
+    height: 40px;
+    font-size: 20px;
+    width: 100%;
+    color: black;
+    padding: 0.7em 1em;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(229, 226, 226);
+    align-items: center;
+
+
+
+
+}
