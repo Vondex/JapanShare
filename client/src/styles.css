@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('./assets/resources/home.html');
+@import url('./assets/resources/catalog.css');
+/* @import url('./home.css'); */
+/* @import url('./register-login.css');
+@import url('./create-edit.css');
+@import url('./404.css'); */
+/* @import url('./details.css');
+@import url('./new-catalog.css'); */
