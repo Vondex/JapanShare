@@ -21,7 +21,6 @@ html {
     font-size: 16px;
     box-sizing: border-box;
     /* background: #ffe0ef; */
-    overflow-x: hidden;
 }
 
 #box {
@@ -36,6 +35,10 @@ body {
 
 main {
     padding-bottom: 5em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 
 body {
