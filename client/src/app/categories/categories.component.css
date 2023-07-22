@@ -1,0 +1,48 @@
+
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.catalog-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+
+}
+
+
+    /* width: 100%;
+    height: 100vh; */
+    /* background: blueviolet; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+
+
+/* Categories section */
+.categories-container {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+
+}
+.headline {
+
+    text-align: center;
+    width: 100%;
+    /* font-size: 200%; */
+    /* background-color: rgba(36, 35, 35, 0.688);; */
+}
+.headline>p {
+    font-size: 200%;
+    text-transform: uppercase;
+    font-weight: 800;
+}

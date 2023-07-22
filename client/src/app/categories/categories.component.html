@@ -1,0 +1,13 @@
+<div class="catalog-section">
+    <div class="headline">
+        <p>Categories</p>
+    </div>
+    <div class="categories-container" *ngIf="categories">
+
+        <app-category-item *ngFor="let category of categories" [category]="category"></app-category-item>
+
+    
+    </div>
+    <div *ngIf="!categories">Loading...</div>
+
+</div>
