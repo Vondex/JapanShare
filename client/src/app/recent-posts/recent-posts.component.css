@@ -47,3 +47,16 @@
     margin-bottom: 1.5rem;
 }
 
+
+.headline {
+
+    text-align: center;
+    width: 100%;
+    /* font-size: 200%; */
+    /* background-color: rgba(36, 35, 35, 0.688);; */
+}
+.headline>p {
+    font-size: 200%;
+    text-transform: uppercase;
+    font-weight: 800;
+}

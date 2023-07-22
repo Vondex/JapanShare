@@ -1,0 +1,26 @@
+<div class="recent-section">
+    <div class="headline">
+        <p>Recent posts</p>
+    </div>
+
+    <div *ngIf="recentPostsList" class="posts">
+        <!-- Single Card -->
+        <div  *ngFor="let post of recentPostsList" [post]="post" class="posts-item">
+            <div class="recent-post-card">
+                <img src={{post.image}}>
+                <div class="recent-post-card-content">
+                    <p class="author">{{post.userId.username}}</p>
+                    <p class="category">{{post.categoryId.categoryName}}</p>
+                    <p class="date-added">Added: {{post.created_at}}</p>
+                    <!-- <button class="post-details">View more</button> -->
+                </div>
+            </div>
+        </div>
+
+
+     
+    </div>
+    <div *ngIf="!recentPostsList"><p>Loading...</p></div>
+    <div *ngIf="recentPostsList.length === 0"><p>No posts yet!</p></div>
+
+</div>
