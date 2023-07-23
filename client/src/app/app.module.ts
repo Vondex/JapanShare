@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
 import { UserService } from './user.service';
-import { storageServiceProvider } from './storage.service';
-import { CategoriesComponent } from './categories/categories.component';
-import { CategoryService } from './category.service';
-import { CategoryItemComponent } from './category-item/category-item.component';
-import { LoaderComponent } from './loader/loader.component';
-import { PostService } from './post.service';
+
+import { CategoryService } from './category/category.service';
+import { LoaderComponent } from './shared/loader/loader.component';
+
 
 import { CatalogComponent } from './catalog/catalog.component';
 
@@ -21,28 +19,28 @@ import { FooterComponent } from './core/footer/footer.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { PostListComponent } from './post-list/post-list.component';
+
+import { CategoryModule } from './category/category.module';
+import { PostModule } from './post/post.module';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CategoriesComponent,
-    CategoryItemComponent,
     LoaderComponent,
-    CatalogComponent,
-    PostListComponent
+    CatalogComponent
   ],
   imports: [
     CoreModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CategoryModule,
+    PostModule
   ],
   providers: [
     UserService,
-    CategoryService,
-    storageServiceProvider,
-    PostService
+    CategoryService
+
   ],
   bootstrap: [
     HeaderComponent,

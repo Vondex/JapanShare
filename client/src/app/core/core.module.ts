@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
+import { storageServiceProvider } from './storage.service';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,10 @@ import { RecentPostsComponent } from './recent-posts/recent-posts.component';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+
+    storageServiceProvider
   ],
   exports: [
     HeaderComponent,

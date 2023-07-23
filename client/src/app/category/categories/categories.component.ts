@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CategoryService } from '../category.service';
-import { ICategory } from '../interfaces';
+import { ICategory } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-categories',
