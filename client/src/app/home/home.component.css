@@ -199,6 +199,7 @@
     position: absolute;
     display: none;
     animation: fadeIn 0.3s;
+    transition: 0.3s;
 
 }
 

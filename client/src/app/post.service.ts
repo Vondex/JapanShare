@@ -10,7 +10,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  loadRecentPosts(limit?: number): Observable<IPost[]> {
+  loadPosts(limit?: number): Observable<IPost[]> {
     return this.http.get<IPost[]>(`${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`)
   }
   
