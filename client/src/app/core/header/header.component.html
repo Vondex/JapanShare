@@ -3,17 +3,17 @@
     <nav class="navigation-menu">
 
         <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Catalog</a></li>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/catalog">Catalog</a></li>
             <div class="unlogged" *ngIf="!isLogged">
 
-                <li><a href="#" (click)="loginHandler()">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a routerLink="/user/login" (click)="loginHandler()">Login</a></li>
+                <li><a routerLink="/user/register">Register</a></li>
             </div>
             <div class="logged" *ngIf="isLogged">
 
                 <li><a href="#">Create</a></li>
-                <li><a href="#">User's Profile</a></li>
+                <li><a routerLink="/user/profile">User's Profile</a></li>
                 <li><a href="#" (click)="logoutHandler()">Logout</a></li>
             </div>
         </ul>

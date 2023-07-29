@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
 import { storageServiceProvider } from './storage.service';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { storageServiceProvider } from './storage.service';
     RecentPostsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
 

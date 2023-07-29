@@ -6,9 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { UserService } from './user.service';
 
-import { CategoryService } from './category/category.service';
+
+
 import { LoaderComponent } from './shared/loader/loader.component';
 
 
@@ -22,6 +22,7 @@ import { CoreModule } from './core/core.module';
 
 import { CategoryModule } from './category/category.module';
 import { PostModule } from './post/post.module';
+import { UserModule } from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +36,10 @@ import { PostModule } from './post/post.module';
     HttpClientModule,
     AppRoutingModule,
     CategoryModule,
-    PostModule
+    PostModule,
+    UserModule
   ],
   providers: [
-    UserService,
-    CategoryService
-
   ],
   bootstrap: [
     HeaderComponent,
