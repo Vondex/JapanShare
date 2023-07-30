@@ -1,1 +1,40 @@
-<p>login works!</p>
+<section id="login-page">
+
+    <div class="loginSection" *ngIf="!isLoading">
+        <div class="info">
+            <h2>Welcome again</h2>
+            <p>to Japan Share!</p>
+
+        </div>
+        <form action="#" method="" class="loginForm">
+            <h2>Login</h2>
+            <ul class="noBullet">
+                <li>
+                    <label for="email">Email:</label>
+                    <input #userEmail type="text" class="inputFields" id="email" name="" placeholder="mariah@gmail.com"
+                     (keyup)="updateInputValue('email', userEmail.value)"/>
+                    <p *ngIf="showEmailError" class="error">Email is required!</p>
+                    <!-- <p class="error">Email is invalid!</p> -->
+                </li>
+                <li>
+                    <label for="password">Password:</label>
+                    <input #userPassword type="password" class="inputFields" id="password" name="" placeholder="*********" 
+                    (keyup)="updateInputValue('password', userPassword.value)" />
+                    <p *ngIf="showPasswordError" class="error">Password is required!</p>
+                    <!-- <p class="error">Password must be at least 4 characters long!</p> -->
+                </li>
+
+                <li id="center-btn">
+                    <button type="button" (click)="submitFormHandler()" [disabled]="hasFormErrors" id="login-btn">Login</button>
+                </li>
+            </ul>
+            <p class="navigation-field">
+                <span>
+                    If you don't have a profile click <a routerLink="/user/register">here</a>
+                </span>
+            </p>
+        </form>
+    </div>
+    <app-loader [isLoading]="isLoading"></app-loader>
+
+</section>

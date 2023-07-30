@@ -16,7 +16,6 @@
     width: 100%;
     height: 600px;
 }
-
 .section-2 {
     background: #ffe0ef;
     /* background: #f7f5f5; */
@@ -24,9 +23,10 @@
     flex-direction: column;
     text-align: center;
     justify-items: center;
+    margin: auto;
 }
 .sec-2-head-splash{
-    margin-top: 50px;
+    margin-top: 2em;
     /* font-family: 'Pacifico', cursive; */
     font-family: 'Splash', cursive;
     font-size: 20px;
@@ -39,17 +39,11 @@
 
 .sec-2-para {
     text-align: center;
-    margin-left: 280px;
-    margin-right: 280px;
     width: 60%;
-}
-.sec-2-para {
+    margin: auto;
     font-size: 25px;
-    margin-top: 60px;
-    text-align: center;
-    
-
 }
+
 
 .section-3 {
     background-image: url('../../assets/resources/static/img/something.jpg');

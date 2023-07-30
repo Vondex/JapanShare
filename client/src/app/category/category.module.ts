@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryItemComponent } from './category-item/category-item.component';
 import { CategoryService } from './category.service';
+import { NewComponent } from './new/new.component';
+import { CategoryRouterModule } from './category-routing.module';
+import { DetailsComponent } from './details/details.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     CategoriesComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
+    NewComponent,
+    DetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CategoryRouterModule,
+    SharedModule
     
   ],
   providers: [

@@ -1,11 +1,10 @@
-export interface IUser {
+import { IBase } from './base';
+
+export interface IUser extends IBase {
     categories: string[];
     posts: string[];
-    _id: string;
     email: string;
     username: string;
     password: string;
-    created_at: string;
-    updatedAt: string;
-    __v: number;
+
 }

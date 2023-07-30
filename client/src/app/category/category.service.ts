@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { ICategory, IUser } from '../shared/interfaces';
+import { ICategory, IPost, IUser } from '../shared/interfaces';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -13,5 +13,9 @@ export class CategoryService {
   loadCategories(): Observable<ICategory[]> {
 
     return this.http.get<ICategory[]>(`${apiUrl}/categories`);
+  }
+
+  loadCategory(id: string): Observable<ICategory<IPost>> {
+    return this.http.get<ICategory<IPost>>(`${apiUrl}/categories/${id}`);
   }
 }

@@ -7,14 +7,14 @@
             <li><a routerLink="/catalog">Catalog</a></li>
             <div class="unlogged" *ngIf="!isLogged">
 
-                <li><a routerLink="/user/login" (click)="loginHandler()">Login</a></li>
+                <li><a routerLink="/user/login">Login</a></li>
                 <li><a routerLink="/user/register">Register</a></li>
             </div>
             <div class="logged" *ngIf="isLogged">
 
-                <li><a href="#">Create</a></li>
+                <li><a routerLink="/category/new">Create</a></li>
                 <li><a routerLink="/user/profile">User's Profile</a></li>
-                <li><a href="#" (click)="logoutHandler()">Logout</a></li>
+                <li><a routerLink="/" (click)="logoutHandler()">Logout</a></li>
             </div>
         </ul>
 

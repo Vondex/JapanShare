@@ -1,0 +1,71 @@
+<div class="details-section" *ngIf="category">
+    <div class="section-1-details box">
+        <img src={{category.categoryImage}} alt="">
+    </div>
+    <div class="section-2 box">
+        <div class="sec-2-head-splash">
+
+            <h1>{{category.categoryName}}</h1>
+        
+        </div>
+        <div class="sec-2-para">
+
+            <p>{{category.posts[0].text}}</p>
+
+        </div>
+
+    </div>
+    <div class="section-posts box">
+        <div class="posts">
+            <h1>Posts</h1>
+            <div class="post-item" *ngFor="let post of category.posts">
+                <div class="post-content">
+                    <!-- <h1>Kyoto Temples</h1> -->
+                    <p>Added by: <span>{{post.userId.username}}</span> on <span>{{post.created_at}}</span></p>
+                    <div class="description">
+
+                        <p>{{post.text}}</p>
+                    </div>
+                    <span>{{post.likes.length}} likes</span>
+                </div>
+                <div class="post-img">
+                    <img src={{post.image}}>
+                    <div class="react">
+                        <button class="like">Like</button>
+                        <button class="dislike">Dislike</button>
+                    </div>
+
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="add-post-section">
+            <div class="container-form">
+                <form action="#" method="" class="addPostForm">
+                    <h2>Add Your Post</h2>
+                    <ul class="noBullet">
+
+
+                        <li>
+                            <label for="image">Image:</label>
+                            <input type="text" class="inputFields" id="image" placeholder="http:/..." name=""
+                                value="" />
+                        </li>
+                        <li>
+                            <label for="description">Description:</label>
+                            <textarea id="description" class="inputFields" name=""
+                                placeholder="Tokyo, the heart of Japan..."></textarea>
+                        </li>
+                        <li id="center-btn">
+                            <button id="create-btn">Add Post</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<app-loader [isLoading]="!category"></app-loader>

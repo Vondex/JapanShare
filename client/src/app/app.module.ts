@@ -9,9 +9,6 @@ import { HomeComponent } from './home/home.component';
 
 
 
-import { LoaderComponent } from './shared/loader/loader.component';
-
-
 import { CatalogComponent } from './catalog/catalog.component';
 
 import { HeaderComponent } from './core/header/header.component';
@@ -23,18 +20,21 @@ import { CoreModule } from './core/core.module';
 import { CategoryModule } from './category/category.module';
 import { PostModule } from './post/post.module';
 import { UserModule } from './user/user.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoaderComponent,
-    CatalogComponent
+    CatalogComponent,
+    NotFoundComponent
   ],
   imports: [
     CoreModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     CategoryModule,
     PostModule,
     UserModule
