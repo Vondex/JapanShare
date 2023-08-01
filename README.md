@@ -8,7 +8,7 @@ Sharing your journey tells about the opportunities in this beautiful country. Yo
 This is a simple project created with Angular </p>
 
 <br>
-
+<img src="https://github.com/Vondex/JapanShare/blob/main/imgs/home-page.png" alt="home-page">
 <h2>Back-End</h2>
 
 <li>Modified SoftUni Practice Server</li>
