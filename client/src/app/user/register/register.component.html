@@ -10,7 +10,7 @@
                 
                 <li>
                     <label for="email">Email:</label>
-                    <input type="email" class="inputFields" id="email" name="email" value="" placeholder="marina@gmail.com" formControlName="email"/>
+                    <input type="email" class="inputFields" id="email" name="email" placeholder="marina@gmail.com" formControlName="email"/>
                      <p *ngIf="form.get('email').touched && form.get('email').errors?.required" class="error">Email is required!</p>
                      <p  *ngIf="form.get('email').touched && form.get('email').errors?.emailValidator" class="error">Email is invalid!</p>
                 </li>

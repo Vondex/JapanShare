@@ -7,6 +7,8 @@ import { NewComponent } from './new/new.component';
 import { CategoryRouterModule } from './category-routing.module';
 import { DetailsComponent } from './details/details.component';
 import { SharedModule } from '../shared/shared.module';
+import { PostModule } from '../post/post.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     CategoryRouterModule,
-    SharedModule
+    SharedModule,
+    PostModule,
+    FormsModule
     
   ],
   providers: [
