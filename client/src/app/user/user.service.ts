@@ -1,25 +1,49 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from '../core/storage.service';
 import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { IUser } from '../shared/interfaces';
+import { catchError, tap } from 'rxjs/operators';
+
+const apiUrl = environment.apiUrl;
 
 @Injectable()
 export class UserService {
 
-  isLogged = false;
-  constructor(private storage: StorageService) { 
-    this.isLogged = this.storage.getItem('isLogged');
+  currentUser: IUser | null;
+
+  get isLogged(): boolean { return !!this.currentUser; }
+
+  constructor(private http: HttpClient) { }
+
+  getCurrentUserProfile(): Observable<any> {
+    return this.http.get(`${apiUrl}/profile`, { withCredentials: true }).pipe(
+      tap(((user: IUser) => this.currentUser = user)),
+      catchError(() => { this.currentUser = null; return of(null); })
+    );
   }
 
   login(data: any): Observable<any> {
-    this.isLogged = true;
-    this.storage.setItem('isLogged', true);
-    return of(data).pipe(delay(3000));
+    return this.http.post(`${apiUrl}/login`, data, { withCredentials: true }).pipe(
+      tap((user: IUser) => this.currentUser = user)
+    );
+  }
+
+  register(data: any): Observable<any> {
+    return this.http.post(`${apiUrl}/register`, data, { withCredentials: true }).pipe(
+      tap((user: IUser) => this.currentUser = user)
+    );
   }
 
   logout(): Observable<any> {
-    this.isLogged = false;
-    this.storage.setItem('isLogged', false);
-    return of(null).pipe(delay(3000));
+    return this.http.post(`${apiUrl}/logout`, {}, { withCredentials: true }).pipe(
+      tap(() => this.currentUser = null)
+    );
+  }
+
+  updateProfile(data: any): Observable<IUser> {
+    return this.http.put(`${apiUrl}/profile`, data, { withCredentials: true }).pipe(
+      tap((user: IUser) => this.currentUser = user)
+    );
   }
 }

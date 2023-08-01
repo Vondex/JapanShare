@@ -4,34 +4,38 @@
             <h2>Discover</h2>
             <p>the beauty of Japan</p>
         </div>
-        <form action="#" method="" class="signupForm">
+        <form [formGroup]="form" class="signupForm" (ngSubmit)="submitHandler()">
             <h2>Sign Up</h2>
             <ul class="noBullet">
                 
                 <li>
                     <label for="email">Email:</label>
-                    <input type="text" class="inputFields" id="email" name="" value="" placeholder="marina@gmail.com" />
-                     <!-- <p class="error">Email is required!</p> -->
+                    <input type="email" class="inputFields" id="email" name="email" value="" placeholder="marina@gmail.com" formControlName="email"/>
+                     <p *ngIf="form.get('email').touched && form.get('email').errors?.required" class="error">Email is required!</p>
+                     <p  *ngIf="form.get('email').touched && form.get('email').errors?.emailValidator" class="error">Email is invalid!</p>
                 </li>
                 <li>
                     <label for="username">Username:</label>
-                    <input type="text" class="inputFields" id="username" name="" placeholder="Marina" />
-                     <!-- <p class="error">Username is required!</p> -->
+                    <input type="text" class="inputFields" id="username" name="username" placeholder="Marina" formControlName="username" />
+                     <p *ngIf="form.get('username').touched && form.get('username').errors?.required" class="error">Username is required!</p>
+                     <p *ngIf="form.get('username').touched && form.get('username').errors?.minlength" class="error">Username must be at least 5 characters long!</p>
                 </li>
                 <li>
                     <label for="password">Password:</label>
-                    <input type="password" class="inputFields" id="password" name="" placeholder="******" />
-                     <!-- <p class="error">Password is required!</p> -->
+                    <input type="password" class="inputFields" id="password" name="password" placeholder="******" formControlName="password"/>
+                     <p *ngIf="form.get('password').touched && form.get('password').errors?.required" class="error">Password is required!</p>
+                     <p *ngIf="form.get('password').touched && form.get('password').errors?.minlength" class="error">Password must be at least 5 characters long!</p>
                 </li>
 
                 <li>
-                    <label for="repassword">Repeat Password:</label>
-                    <input type="repassword" class="inputFields" id="repassword" name="" placeholder="******" />
-                     <!-- <p class="error">Passwords don't match!</p> -->
+                    <label for="rePassword">Repeat Password:</label>
+                    <input type="password" class="inputFields" id="rePassword" name="rePassword" placeholder="******" formControlName="rePassword"/>
+                     <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.required" class="error">Passwords don't match!</p>
+                     <p  *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.rePasswordValidator" class="error">Passwords don't match!</p>
                 </li>
                
                 <li id="center-btn">
-                    <button id="join-btn">Join</button>
+                    <button [disabled]="isLoading || form.invalid" id="join-btn">Join</button>
                 </li>
                 <p class="navigation-field">
                     <span>
@@ -41,4 +45,5 @@
             </ul>
         </form>
     </div>
+    <app-loader [isLoading]="isLoading"></app-loader>
 </section>

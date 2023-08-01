@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+/* 
 .section-1-details {
     height: 100vh;
     background-image: url('../../../assets/resources/static/img/kumamoto.jpg');
     background-position: 70%;
     background-attachment: fixed;
     background-size: cover;
-    /* filter: brightness(70%); */
-}
+    filter: brightness(70%);
+} */
 
 .box {
     width: 100%;
@@ -67,7 +67,11 @@
     padding: 2em;
 
 }
-
+.posts>h1 {
+    font-family: 'Splash', cursive;
+    font-weight: lighter;
+    font-size: 100px;
+}
 .post-content {
 
     margin-top: 1em;
@@ -103,8 +107,12 @@
 span {
     font-weight: bold;
 }
-
-.react>button {
+.react, .owner {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6em;
+}
+.react>button, .owner>button {
     width: 6em;
     border-radius: 7px;
     border: none;
@@ -116,12 +124,15 @@ span {
 .like {
     background-color: rgb(67, 159, 67);
 }
-
-.dislike {
+.delete {
     background-color: rgb(211, 76, 76);
 }
+.dislike, .edit {
+    background-color: #5e5858;
+}
 
-.react>button:hover {
+
+.react>button:hover, .owner>button:hover {
     cursor: pointer;
     box-shadow: 2px 3px 5px 3px rgba(130, 100, 122, 0.513);
     font-weight: bold;
@@ -158,5 +169,75 @@ textarea {
  }
  .inputFields {
     width: 1100px;
+    margin: 18px 0;
+    font-size: 19px;
+    padding: 10px;
+    border: 1px solid rgba(211, 98, 136, 0.626);
+    border-top: 1px solid rgba(211, 98, 136, 0.626);
+    background: rgb(229, 226, 226);
+    border-left: none;
+    border-right: none;
+    /* background: rgba(20, 20, 20, .2); */
+    color: rgba(8, 0, 6, 0.641);
+    outline: none;
  }
  
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin-top: 0.6em;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+label {
+    margin-bottom: -0.5em;
+    font-weight: 700;
+}
+.error {
+    color: rgb(222, 8, 8);
+    font-weight: bold;
+}
+label:nth-of-type(2) {
+    margin-top: 3em;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+ }
+ 
+ .createForm {
+     width: 720px;
+     padding: 10px 0;
+     /* background: rgba(20, 40, 40, .8); */
+     transition: .2s;
+ }
+ 
+
+ 
+ #create-btn{
+ 
+     border: 1px solid rgba(211, 98, 136, 0.626);
+     background: rgba(211, 98, 136, 0.626);
+     font-size: 18px;
+     color: white;
+     margin-top: 20px;
+     padding: 10px 43px;
+     cursor: pointer;
+     transition: .4s;
+     margin-bottom: 10%;
+     text-transform: uppercase;
+ }
+ 
+ #create-btn:hover{
+     background: rgba(124, 59, 81, 0.626);
+     padding: 10px 80px;  
+ }

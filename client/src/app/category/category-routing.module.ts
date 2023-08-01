@@ -14,7 +14,7 @@ const routes: Routes = [
         component: CategoriesComponent
     },
     {
-        path: 'category/details/:id',
+        path: 'category/detail/:id',
         component: DetailsComponent
 
     },

@@ -1,31 +1,33 @@
 <section id="login-page">
 
-    <div class="loginSection" *ngIf="!isLoading">
+    <div class="loginSection">
         <div class="info">
             <h2>Welcome again</h2>
             <p>to Japan Share!</p>
 
         </div>
-        <form action="#" method="" class="loginForm">
+        <form #form="ngForm" class="loginForm" (ngSubmit)="submitFormHandler(form.value)">
             <h2>Login</h2>
             <ul class="noBullet">
                 <li>
                     <label for="email">Email:</label>
-                    <input #userEmail type="text" class="inputFields" id="email" name="" placeholder="mariah@gmail.com"
-                     (keyup)="updateInputValue('email', userEmail.value)"/>
-                    <p *ngIf="showEmailError" class="error">Email is required!</p>
-                    <!-- <p class="error">Email is invalid!</p> -->
+                    <input #userEmail="ngModel" class="inputFields" type="text" id="email" name="email" ngModel appSubmitOnValid
+                    (ngModelChangeIfValid)="changeHandler($event)" required appEmailValidator
+                        email placeholder="mariah@gmail.com" />
+
+                    <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error">Email is required!</p>
+                    <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">Email is invalid!</p>
                 </li>
                 <li>
                     <label for="password">Password:</label>
-                    <input #userPassword type="password" class="inputFields" id="password" name="" placeholder="*********" 
-                    (keyup)="updateInputValue('password', userPassword.value)" />
-                    <p *ngIf="showPasswordError" class="error">Password is required!</p>
-                    <!-- <p class="error">Password must be at least 4 characters long!</p> -->
+                    <input #userPassword="ngModel" type="password" class="inputFields" id="password" name="password"
+                        placeholder="*********" ngModel required minlength="5" />
+                    <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">Password is required!</p>
+                    <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">Password must be at least 5 characters long!</p>
                 </li>
 
                 <li id="center-btn">
-                    <button type="button" (click)="submitFormHandler()" [disabled]="hasFormErrors" id="login-btn">Login</button>
+                    <button [disabled]="isLoading || form.invalid" id="login-btn">Login</button>
                 </li>
             </ul>
             <p class="navigation-field">
