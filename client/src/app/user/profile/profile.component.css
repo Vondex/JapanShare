@@ -69,13 +69,20 @@
     outline: none;
     
 }
-
+.fields {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(211, 98, 136, 0.626);
+    border-top: 1px solid rgba(211, 98, 136, 0.626);
+    margin-top: 1em;
+    font-size: 20px;
+}
 .noBullet {
     list-style-type: none;
     padding: 0;
 }
 
-#edit-profile-btn {
+#edit-profile-btn, #cancel-profile-btn {
     border: 1px solid rgba(211, 98, 136, 0.626);
     background: rgba(211, 98, 136, 0.626);
     font-size: 18px;
@@ -86,7 +93,7 @@
     transition: .4s;
 }
 
-#edit-profile-btn:hover {
+#edit-profile-btn:hover, #cancel-profile-btn:hover {
     background: rgba(124, 59, 81, 0.626);
     padding: 10px 80px;
 }
