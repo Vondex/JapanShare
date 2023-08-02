@@ -4,8 +4,12 @@
 
         <h1 class="card-title">{{category.categoryName}}</h1>
         <p class="categ-likes">{{category.categoryLikes.length}} likes</p>
-        <p class="author">Added by {{category.userId.username}}</p>
+        <p class="author">Added by: {{category.userId.username}}</p>
         <p class="view-details"><a [routerLink]="['/category/detail', category._id]">View Details</a></p>
+        <div class="react">
+            <button class="like">Like</button>
+            <button class="dislike">Dislike</button>
+        </div>
 
 
     </div>

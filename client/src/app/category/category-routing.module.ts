@@ -30,8 +30,7 @@ const routes: Routes = [
         path: 'detail/:id',
         component: DetailsComponent,
         data: {
-          title: 'CATEGORY DETAILS',
-          isLogged: true
+          title: 'CATEGORY DETAILS'
         }
       }
     ]

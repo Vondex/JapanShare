@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.card-category>img{
+.card-category>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -27,28 +27,53 @@
     transition: 0.8s;
     color: white;
     padding-left: 20px;
-   
+
 }
 
 .card-title {
     font-weight: 300;
 }
-.categ-likes, .author {
+
+.categ-likes,
+.author {
     font-weight: 100;
 }
-.view-details>a{
+
+.view-details>a {
     text-decoration: none;
     color: white;
     transition: 0.3s;
 }
 
-.card-category:hover .category-card-body{
+.card-category:hover .category-card-body {
     right: -40%;
-    
+
 }
 
 .view-details>a:hover {
     color: rgb(255, 17, 96);
-  
-    
+
+
+}
+
+.react {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.react>button {
+    cursor: pointer;
+    border: 2px solid #32303024;
+    background-color: transparent;
+    width: 100px;
+    color: #d9cfd2;
+    font-size: 1em;
+    transition: .4s;
+    border-radius: 3px;
+}
+
+.react>button:hover {
+    color: rgb(255, 17, 96);
+    box-shadow: 0 6px 6px rgba(67, 63, 63, 0.6);
 }

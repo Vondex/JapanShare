@@ -16,6 +16,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+
   getCurrentUserProfile(): Observable<any> {
     return this.http.get(`${apiUrl}/users/profile`, { withCredentials: true }).pipe(
       tap(((user: IUser) => this.currentUser = user)),
@@ -24,15 +25,25 @@ export class UserService {
   }
 
   login(data: any): Observable<any> {
-    return this.http.post(`${apiUrl}/login`, data, { withCredentials: true }).pipe(
-      tap((user: IUser) => this.currentUser = user)
-    );
+    try {
+      return this.http.post(`${apiUrl}/login`, data, { withCredentials: true }).pipe(
+        tap((user: IUser) => this.currentUser = user)
+      );
+    } catch (err) {
+      throw new Error(err);
+    }
+   
   }
 
   register(data: any): Observable<any> {
-    return this.http.post(`${apiUrl}/register`, data, { withCredentials: true }).pipe(
-      tap((user: IUser) => this.currentUser = user)
-    );
+    try {
+      return this.http.post(`${apiUrl}/register`, data, { withCredentials: true }).pipe(
+        tap((user: IUser) => this.currentUser = user)
+      );
+
+    } catch (err) {
+      throw new Error(err);
+    }
   }
 
   logout(): Observable<any> {

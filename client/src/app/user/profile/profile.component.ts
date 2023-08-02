@@ -19,6 +19,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  changeHandler(data: any): void {
+    console.log(data);
+  }
 
   toggleEditMode(): void {
     this.inEditMode = !this.inEditMode;

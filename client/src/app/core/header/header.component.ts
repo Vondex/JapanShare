@@ -9,7 +9,6 @@ import { UserService } from '../../user/user.service';
 })
 export class HeaderComponent implements OnDestroy {
 
-  hideNavigation = false;
 
 
   get isLogged(): boolean {
