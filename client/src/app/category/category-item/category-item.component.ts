@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICategory } from '../../shared/interfaces';
 
+
 @Component({
   selector: 'app-category-item',
   templateUrl: './category-item.component.html',
@@ -9,6 +10,7 @@ import { ICategory } from '../../shared/interfaces';
 export class CategoryItemComponent implements OnInit {
 
   @Input() category: ICategory;
+
 
   constructor() { }
 

@@ -4,57 +4,31 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../shared/interfaces';
 import { catchError, tap } from 'rxjs/operators';
+import { AuthService } from '../core/auth.service';
 
 const apiUrl = environment.apiUrl;
 
 @Injectable()
 export class UserService {
 
-  currentUser: IUser | null;
 
-  get isLogged(): boolean { return !!this.currentUser; }
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+    ) { }
 
 
   getCurrentUserProfile(): Observable<any> {
-    return this.http.get(`${apiUrl}/users/profile`, { withCredentials: true }).pipe(
-      tap(((user: IUser) => this.currentUser = user)),
-      catchError(() => { this.currentUser = null; return of(null); })
+    return this.http.get(`/users/profile`).pipe(
+      tap(((user: IUser) => this.authService.currentUser = user))
+      // catchError(() => { this.authService.currentUser = null; return of(null); })
     );
   }
 
-  login(data: any): Observable<any> {
-    try {
-      return this.http.post(`${apiUrl}/login`, data, { withCredentials: true }).pipe(
-        tap((user: IUser) => this.currentUser = user)
-      );
-    } catch (err) {
-      throw new Error(err);
-    }
-   
-  }
-
-  register(data: any): Observable<any> {
-    try {
-      return this.http.post(`${apiUrl}/register`, data, { withCredentials: true }).pipe(
-        tap((user: IUser) => this.currentUser = user)
-      );
-
-    } catch (err) {
-      throw new Error(err);
-    }
-  }
-
-  logout(): Observable<any> {
-    return this.http.post(`${apiUrl}/logout`, {}, { withCredentials: true }).pipe(
-      tap(() => this.currentUser = null)
-    );
-  }
 
   updateProfile(data: any): Observable<IUser> {
-    return this.http.put(`${apiUrl}/users/profile`, data, { withCredentials: true }).pipe(
-      tap((user: IUser) => this.currentUser = user)
+    return this.http.put(`/users/profile`, data).pipe(
+      tap((user: IUser) => this.authService.currentUser = user)
     );
   }
 }

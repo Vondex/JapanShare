@@ -12,12 +12,13 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   loadPosts(limit?: number): Observable<IPost[]> {
-    return this.http.get<IPost[]>(`${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`)
+    return this.http.get<IPost[]>(`/posts${limit ? `?limit=${limit}` : ''}`)
   }
 
-  addPost(id: string): Observable<ICategory<IPost>> {
-    return this.http.post<ICategory<IPost>>(`${apiUrl}/categories/${id}`, { withCredentials: true });
-  }
+  // addPost(id: string): Observable<ICategory<IPost>> {
+  //   return this.http.post<ICategory<IPost>>(`/categories/${id}`);
+  // }
+  
   // editPost(data: any): Observable<IPost> {
   //   return this.http.put(`${apiUrl}/users/profile`, data, { withCredentials: true }).pipe(
   //     tap((user: IUser) => this.currentUser = user)

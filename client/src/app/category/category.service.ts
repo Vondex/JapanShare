@@ -12,13 +12,13 @@ export class CategoryService {
 
   loadCategories(): Observable<ICategory[]> {
 
-    return this.http.get<ICategory[]>(`${apiUrl}/categories`, { withCredentials: true });
+    return this.http.get<ICategory[]>(`/categories`);
   }
 
   loadCategory(id: string): Observable<ICategory<IPost>> {
-    return this.http.get<ICategory<IPost>>(`${apiUrl}/categories/${id}`, { withCredentials: true });
+    return this.http.get<ICategory<IPost>>(`/categories/${id}`);
   }
   addCategory(data: any): Observable<ICategory<any>> {
-    return this.http.post<ICategory<any>>(`${apiUrl}/categories`, data, { withCredentials: true });
+    return this.http.post<ICategory<any>>(`/categories`, data);
   }
 }

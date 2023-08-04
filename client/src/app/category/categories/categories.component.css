@@ -46,3 +46,7 @@
     text-transform: uppercase;
     font-weight: 800;
 }
+.loading {
+    margin-top: 2em;
+    font-size: 5em;
+}

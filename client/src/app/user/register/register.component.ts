@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { emailValidator, rePasswordValidatorFactory } from 'src/app/shared/validators';
-import { UserService } from '../user.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
+    private authService: AuthService,
     private router: Router
   ) {
     const passwordControl = this.fb.control('', [Validators.required, Validators.minLength(5)]);
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     const data = this.form.value;
     this.isLoading = true;
 
-    this.userService.register(data).subscribe({
+    this.authService.register(data).subscribe({
       next: () => {
         this.isLoading = false;
         this.router.navigate(['/']);

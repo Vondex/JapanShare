@@ -27,10 +27,11 @@ const routes: Routes = [
         }
       },
       {
-        path: 'detail/:id',
+        path: 'details/:id',
         component: DetailsComponent,
         data: {
-          title: 'CATEGORY DETAILS'
+          title: 'CATEGORY DETAILS',
+           isLogged: true
         }
       }
     ]

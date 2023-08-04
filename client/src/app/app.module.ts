@@ -19,7 +19,6 @@ import { CoreModule } from './core/core.module';
 
 import { CategoryModule } from './category/category.module';
 import { PostModule } from './post/post.module';
-import { UserModule } from './user/user.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 @NgModule({
@@ -36,8 +35,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     CategoryModule,
-    PostModule,
-    UserModule
+    PostModule
   ],
   providers: [
   ],
