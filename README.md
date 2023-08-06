@@ -2,10 +2,10 @@
 <br>
 
 <h2>Description</h2>
-<p>JapanShare is a place where people can share their journeys and experience in Japan. 
+<p>JapanShare is a place where people can share their journeys, experience and knowledge about Japan. 
 It's shaped with the goal of helping other people who have passion about the land of the Rising Sun and a dream to go there one day. 
-Sharing your journey tells about the opportunities in this beautiful country. You may also make new friends! 
-This is a simple project created with Angular </p>
+Sharing your experience, different places, culture etc. tells about the opportunities in this beautiful country. You may also make new friends! 
+This is a simple project created with Angular. </p>
 
 <br>
 <img src="https://github.com/Vondex/JapanShare/blob/main/imgs/home-page.png" alt="home-page">
