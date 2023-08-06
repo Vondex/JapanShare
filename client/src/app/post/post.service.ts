@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { IPost } from '../shared/interfaces/post';
-import { ICategory } from '../shared/interfaces';
+
 
 const apiUrl = environment.apiUrl;
+
 @Injectable()
 export class PostService {
 
@@ -14,15 +15,28 @@ export class PostService {
   loadPosts(limit?: number): Observable<IPost[]> {
     return this.http.get<IPost[]>(`/posts${limit ? `?limit=${limit}` : ''}`)
   }
+  getAllPosts(): Observable<IPost[]> {
+    return this.http.get<IPost[]>(`/posts`);
+  }
+  getPostById(postId: string): Observable<IPost> {
+    return this.getAllPosts().pipe(
+      map(posts => posts.find(post => post._id === postId))
+    );
+  }
+  addPost(categoryId: string, postData: any): Observable<IPost> {
+    return this.http.post<IPost>(`/categories/${categoryId}`, postData);
+  }
 
-  // addPost(id: string): Observable<ICategory<IPost>> {
-  //   return this.http.post<ICategory<IPost>>(`/categories/${id}`);
-  // }
-  
-  // editPost(data: any): Observable<IPost> {
-  //   return this.http.put(`${apiUrl}/users/profile`, data, { withCredentials: true }).pipe(
-  //     tap((user: IUser) => this.currentUser = user)
-  //   );
-  // }
+  deletePost(categoryId: string, postId: string): Observable<any> {
+    return this.http.delete(`/categories/${categoryId}/posts/${postId}`);
+  }
+
+  likePost(postId: string): Observable<any> {
+    return this.http.put<any>(`/likes/${postId}`, {});
+  }
+ 
+
   
 }
+
+

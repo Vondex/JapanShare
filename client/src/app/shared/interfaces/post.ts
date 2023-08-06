@@ -6,8 +6,8 @@ import { ICategory } from "./category";
 export interface IPost extends IBase{
     
     likes:  string[];
-    text: string;
     image: string;
+    text: string;
     userId: IUser;
 
 

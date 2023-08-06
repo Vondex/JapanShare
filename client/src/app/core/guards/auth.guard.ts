@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateChild, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { IUser } from 'src/app/shared/interfaces';
-import { UserService } from 'src/app/user/user.service';
+import {  map, tap } from 'rxjs/operators';
+import { IUser } from '../../shared/interfaces';
 import { AuthService } from '../auth.service';
+// import { PostService } from '../../post/post.service';
 
 @Injectable()
 export class AuthGuard implements CanActivateChild {
@@ -12,15 +12,18 @@ export class AuthGuard implements CanActivateChild {
   constructor(
 
     private authService: AuthService,
+    // private postService: PostService,
     private router: Router
   ) { }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     let stream$: Observable<IUser | null>;
-    if (this.authService.currentUser === undefined) {
+    const currentUser = this.authService.currentUser;
+    
+    if (currentUser === undefined) {
       stream$ = this.authService.authenticate();
     } else {
-      stream$ = of(this.authService.currentUser);
+      stream$ = of(currentUser);
     }
 
     return stream$.pipe(
@@ -35,6 +38,48 @@ export class AuthGuard implements CanActivateChild {
       }),
     );
   }
+
+  // public isPostOwner(postId: string, user: IUser): Observable<boolean> {
+
+  //   return this.postService.getPostById(postId).pipe(
+  //     map((post) => {
+
+  //       const isOwner = post.userId._id === user._id;
+  //       if (!isOwner) {
+
+  //         return false;
+  //       }
+  //       return true;
+  //     })
+  //   );
+  // }
+
+  // canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  //   const postId = childRoute.paramMap.get('id'); // Get the post ID from the route params
+  //   if (!postId) {
+  //     return of(false);
+  //   }
+
+  //   const user = this.authService.currentUser;
+
+  //   if (!user) {
+
+  //     this.router.navigateByUrl('user/login');
+  //     return of(false);
+  //   }
+
+  //   return this.postService.getPostById(postId).pipe(
+  //     map((post) => {
+  //       const isOwner = post.userId._id === user._id;
+  //       if (!isOwner) {
+  //         return false;
+  //       }
+  //       return true;
+  //     })
+  //   );
+  // }
+
+
 
 }
 

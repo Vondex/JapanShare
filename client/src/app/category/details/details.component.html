@@ -1,7 +1,7 @@
 <div class="details-section" *ngIf="category">
 
 
-    
+
 
     <div class="section-posts box">
         <div class="posts">
@@ -14,44 +14,78 @@
                     <div class="description">
 
                         <p>{{post.text}}</p>
+                      
                     </div>
                     <span>{{post.likes.length}} likes</span>
+                  
                 </div>
                 <div class="post-img">
                     <img src={{post.image}}>
-                    <div class="react">
-                        <button class="like">Like</button>
-                        <button class="dislike">Dislike</button>
-                    </div>
                     <div class="owner">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                        <!-- <button class="edit">Edit</button> -->
+                        <button *ngIf="post.userId._id === authService.currentUser?._id" class="delete" 
+                        (click)="showConfirmation(post._id)">Delete</button>
                     </div>
+
+                    <div class="react">
+                        <button  *ngIf="post.userId._id !== authService.currentUser?._id &&
+                        !hasUserLikedPost(post)" (click)="likePost(post._id)" class="like">Like</button>
+                        <p *ngIf="hasUserLikedPost(post)" class="success">You have liked this post!</p>
+                        
+                    </div>
+              
 
                 </div>
+          
+                <div class="dark-overlay" *ngIf="showDeleteConfirmation">
+                    <div class="confirmation-window">
+                        <p>Are you sure you want to delete this post?</p>
+                        <div class="choice-btns">
+                            <button (click)="deletePost()">Yes</button>
+                            <button (click)="hideConfirmation()">No</button>
+                        </div>
+              
+                      </div>
+
+                </div>
+              
             </div>
-
+            <div *ngIf="category.posts.length === 0" class="no-posts">No posts yet!</div>
+          
         </div>
-
+     
         <div class="add-post-section">
             <div class="container-form">
-                <form action="#" method="" class="addPostForm">
+                <form #f="ngForm" (ngSubmit)="onSubmitAddPost(f)" class="addPostForm">
                     <h2>Add Your Post</h2>
                     <ul class="noBullet">
-
-
                         <li>
-                            <label for="image">Image:</label>
-                            <input type="text" class="inputFields" id="image" placeholder="http:/..." name=""
-                                value="" />
+                            <label for="postImage">Image:</label>
+                            <input #postImage="ngModel" type="text" class="inputFields" id="postImage" placeholder="http:/..." name="postImage"
+                            ngModel required />
+
+                            <p class="error" *ngIf="postImage.touched && postImage.errors?.required">
+                                Image is required!
+                              </p>
+
                         </li>
                         <li>
-                            <label for="description">Description:</label>
-                            <textarea id="description" class="inputFields" name=""
-                                placeholder="Tokyo, the heart of Japan..."></textarea>
+                            <label for="postText">Description:</label>
+                            <textarea #postText="ngModel" id="postText" class="inputFields" name="postText" ngModel required
+                                minlength="20" placeholder="Tokyo, the heart of Japan..."></textarea>
+
+                            <p class="error" *ngIf="postText.touched && postText.errors?.required">
+                                Post text is required!
+                            </p>
+                            <p class="error" *ngIf="postText.touched && postText.errors?.minlength">
+                                Post text must be at least 20 characters long!
+                            </p>
                         </li>
+
+                      
+
                         <li id="center-btn">
-                            <button id="create-btn">Add Post</button>
+                            <button [disabled]="f.invalid" id="create-btn">Add Post</button>
                         </li>
                     </ul>
                 </form>

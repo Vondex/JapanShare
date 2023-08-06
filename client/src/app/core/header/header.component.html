@@ -13,7 +13,7 @@
             <div class="logged" *ngIf="isLogged">
 
                 <li><a routerLink="/category/new">Create</a></li>
-                <li><a routerLink="/user/profile">My Profile</a></li>
+                <li><a routerLink="/user/profile">{{currentUser.username}}'s Profile</a></li>
                 <li><a routerLink="/" (click)="logoutHandler()">Logout</a></li>
             </div>
         </ul>

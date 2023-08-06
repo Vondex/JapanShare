@@ -81,7 +81,13 @@
     list-style-type: none;
     padding: 0;
 }
-
+#center-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 6%;
+    margin-left: 100px;
+   
+}
 #edit-profile-btn, #cancel-profile-btn {
     border: 1px solid rgba(211, 98, 136, 0.626);
     background: rgba(211, 98, 136, 0.626);
@@ -95,7 +101,7 @@
 
 #edit-profile-btn:hover, #cancel-profile-btn:hover {
     background: rgba(124, 59, 81, 0.626);
-    padding: 10px 80px;
+    /* padding: 10px 80px; */
 }
 
 label {

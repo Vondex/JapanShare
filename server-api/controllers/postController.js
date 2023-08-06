@@ -23,6 +23,29 @@ function getLatestsPosts(req, res, next) {
         .catch(next);
 }
 
+function getPosts(req, res, next) {
+   
+    postModel.find()
+        .populate('categoryId userId')
+        .then(posts => {
+            res.status(200).json(posts)
+        })
+        .catch(next);
+}
+
+function getPostById(req, res, next) {
+    const { postId } = req.params;
+
+    postModel.findById(postId)
+        .populate({
+            populate : {
+              path : 'categoryId userId'
+            }
+          })
+        .then(post => res.json(post))
+        .catch(next);
+}
+
 function createPost(req, res, next) {
     const { categoryId } = req.params;
     const { _id: userId } = req.user;
@@ -88,4 +111,6 @@ module.exports = {
     editPost,
     deletePost,
     like,
+    getPosts,
+    getPostById
 }

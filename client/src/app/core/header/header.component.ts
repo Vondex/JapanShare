@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { IUser } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ import { AuthService } from '../auth.service';
 })
 export class HeaderComponent implements OnDestroy {
 
-
+  get currentUser(): IUser {
+    return this.authService.currentUser;
+  }
 
   get isLogged(): boolean {
     return this.authService.isLogged;
