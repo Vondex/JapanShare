@@ -1,4 +1,4 @@
-<h1>JapanShare</h1>
+<h1>Japan Share</h1>
 <br>
 
 <h2>Description</h2>
