@@ -20,8 +20,8 @@ export class UserService {
 
   getCurrentUserProfile(): Observable<any> {
     return this.http.get(`/users/profile`).pipe(
-      tap(((user: IUser) => this.authService.currentUser = user))
-      // catchError(() => { this.authService.currentUser = null; return of(null); })
+      tap(((user: IUser) => this.authService.currentUser = user)),
+      catchError(() => { this.authService.currentUser = null; return of(null); })
     );
   }
 

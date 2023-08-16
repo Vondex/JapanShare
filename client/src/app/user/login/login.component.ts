@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(formValue).subscribe({
       next: (data) => {
         this.isLoading = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/catalog']);
       },
       error: (err) => {
-        this.errorMessage = 'ERROR!';
+        this.errorMessage = err.error.message;
         this.isLoading = false;
       }
     });

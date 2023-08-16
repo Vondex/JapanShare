@@ -16,15 +16,20 @@
                         email placeholder="mariah@gmail.com" />
 
                     <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error">Email is required!</p>
-                    <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">Wrong email or password!</p>
+                    <!-- <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">Wrong email or password!</p> -->
                 </li>
                 <li>
                     <label for="password">Password:</label>
                     <input #userPassword="ngModel" type="password" class="inputFields" id="password" name="password"
                         placeholder="*********" ngModel required minlength="5" />
                     <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">Password is required!</p>
-                    <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">Wrong email or password!</p>
+                    <!-- <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">Wrong email or password!</p> -->
                 </li>
+
+                <li *ngIf="errorMessage">
+                    <p class="error">{{errorMessage}}</p>
+                </li>
+
 
                 <li id="center-btn">
                     <button [disabled]="isLoading || form.invalid" id="login-btn">Login</button>
@@ -35,7 +40,10 @@
                     If you don't have a profile click <a routerLink="/user/register">here</a>
                 </span>
             </p>
+
+          
         </form>
+
     </div>
     <app-loader [isLoading]="isLoading"></app-loader>
 

@@ -33,6 +33,9 @@
                      <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.required" class="error">Passwords don't match!</p>
                      <p  *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.rePasswordValidator" class="error">Passwords don't match!</p>
                 </li>
+                <li *ngIf="errorMessage">
+                    <p class="error">{{errorMessage}}</p>
+                </li>
                
                 <li id="center-btn">
                     <button [disabled]="isLoading || form.invalid" id="join-btn">Join</button>

@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
 
   isLoading = false;
+  errorMessage = '';
 
   constructor(
     private fb: FormBuilder,
@@ -35,6 +36,7 @@ export class RegisterComponent implements OnInit {
   submitHandler(): void {
     const data = this.form.value;
     this.isLoading = true;
+     this.errorMessage = '';
 
     this.authService.register(data).subscribe({
       next: () => {
@@ -42,8 +44,8 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/']);
       },
       error: (err) => {
+        this.errorMessage = err.error.message;
         this.isLoading = false;
-        console.error(err);
       }
     });
   }

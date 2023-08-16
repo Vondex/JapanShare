@@ -1,13 +1,14 @@
 <div class="card-category">
     <img src={{category.categoryImage}} alt="">
     <div class="category-card-body">
-
+        
         <h1 class="card-title">{{category.categoryName}}</h1>
+        <span>Updated {{category.updatedAt | timeMod}}</span>
         <p class="categ-likes">{{category.categoryLikes.length - 1}} likes</p>
         <p class="author">Added by: {{category.userId.username}}</p>
         <p class="view-details"><a [routerLink]="['/category/details', category._id]">View Details</a></p>
-
-
+        
+        
         <div *ngIf="isLogged && !isCurrentUserCategoryAuthor" class="react">
             <button *ngIf="!hasUserLikedCategory(category)" (click)="likeCategory()" class="like">Like</button>
             <p *ngIf="hasUserLikedCategory(category)" class="success">You have liked this category!</p>
