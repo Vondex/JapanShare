@@ -24,14 +24,37 @@ This is a simple project created with Angular. </p>
 
 <h2>Functionality</h2>
 
+<h3>Guest View</h3>
+<p>:heavy_check_mark: Home Page</p>
+<p>:heavy_check_mark: Catalog Page (All Categories and Recent Posts)</p>
+<p>:heavy_check_mark: Login Page</p>
+<p>:heavy_check_mark: Register Page</p>
+
+<br>
+
+<h3>Logged User View</h3>
+<p>:heavy_check_mark: Home Page</p>
+<p>:heavy_check_mark: Catalog Page</p>
+<p>:heavy_check_mark: Profile Page</p>
+<p>:heavy_check_mark: Create Page</p>
+<p>:heavy_check_mark: Details Page</p>
+<ul>
+- The owner of a post can delete it and can edit their personal info in Profile Page <br>
+- A logged user can like the posts and categories of other users <br>
+- The owner of the post or category can not like it <br>
+</ul>
+
+<p>:heavy_check_mark: Logout</p>
+
 <br>
 
 <h2>Starting the app locally</h2>
-Open a terminal and type cd server-api <br>
-Then npm start<br>
+
+Open a terminal and type `cd server-api` <br>
+Then `npm start`<br>
 <br>
-Open another terminal and type cd client <br>
-Then ng s <br>
+Open another terminal and type `cd client` <br>
+Then `ng s` <br>
 <br>
 <h3>And you are ready to go!</h3>
 
