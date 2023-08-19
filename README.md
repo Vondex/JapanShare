@@ -1,4 +1,4 @@
-<h1>JapanShare</h1>
+<h1>Japan Share</h1>
 <br>
 
 <h2>Description</h2>
@@ -31,20 +31,22 @@ This is a simple project created with Angular. </p>
 <p>:heavy_check_mark: Register Page</p>
 
 <br>
+<img src="https://github.com/Vondex/JapanShare/blob/main/imgs/details.png" alt="details-page">
 
+<br>
 <h3>Logged User View</h3>
 <p>:heavy_check_mark: Home Page</p>
 <p>:heavy_check_mark: Catalog Page</p>
 <p>:heavy_check_mark: Profile Page</p>
 <p>:heavy_check_mark: Create Page</p>
+<p>:heavy_check_mark: Logout</p>
 <p>:heavy_check_mark: Details Page</p>
 <ul>
 - The owner of a post can delete it and can edit their personal info in Profile Page <br>
-- A logged user can like the posts and categories of other users <br>
+- A logged user can like posts, categories and can add new post to the category which they have chosen<br>
 - The owner of the post or category can not like it <br>
 </ul>
 
-<p>:heavy_check_mark: Logout</p>
 
 <br>
 
