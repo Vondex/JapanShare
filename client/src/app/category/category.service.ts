@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 const apiUrl = environment.apiUrl;
 @Injectable()
 export class CategoryService {
-  authService: any;
+  // authService: any;
 
   constructor(private http: HttpClient) { }
 

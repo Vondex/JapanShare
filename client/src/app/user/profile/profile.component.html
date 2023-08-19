@@ -66,34 +66,3 @@
     
 </ng-template>
 
-<!-- 
-<form #form="ngForm" class="loginForm" (ngSubmit)="submitFormHandler(form.value)">
-    <h2>Login</h2>
-    <ul class="noBullet">
-        <li>
-            <label for="email">Email:</label>
-            <input #userEmail="ngModel" class="inputFields" type="text" id="email" name="email" ngModel appSubmitOnValid
-            (ngModelChangeIfValid)="changeHandler($event)" required appEmailValidator
-                email placeholder="mariah@gmail.com" />
-
-            <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error">Email is required!</p>
-            <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">Email is invalid!</p>
-        </li>
-        <li>
-            <label for="password">Password:</label>
-            <input #userPassword="ngModel" type="password" class="inputFields" id="password" name="password"
-                placeholder="*********" ngModel required minlength="5" />
-            <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">Password is required!</p>
-            <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">Password must be at least 5 characters long!</p>
-        </li>
-
-        <li id="center-btn">
-            <button [disabled]="isLoading || form.invalid" id="login-btn">Login</button>
-        </li>
-    </ul>
-    <p class="navigation-field">
-        <span>
-            If you don't have a profile click <a routerLink="/user/register">here</a>
-        </span>
-    </p>
-</form> -->

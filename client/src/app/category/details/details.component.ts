@@ -5,7 +5,7 @@ import { IPost } from 'src/app/shared/interfaces/post';
 import { CategoryService } from '../category.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { PostService } from 'src/app/post/post.service';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -18,7 +18,7 @@ export class DetailsComponent implements OnInit {
   category: ICategory<IPost> = null;
   isUserPostAuthor: boolean = false;
   newPost: Partial<IPost> = {};
-  fb: FormBuilder;
+  
 
   showDeleteConfirmation = false;
   postIdToDelete = '';
